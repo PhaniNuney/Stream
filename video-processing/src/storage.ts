@@ -41,6 +41,8 @@ export async function uploadFile(fileName: string) {
   console.log(
     `${localProcessedPath}/${fileName} uploaded to gs://${processedBucket}/${fileName}`
   );
+
+  await storage.bucket(processedBucket).file(fileName).makePublic();
 }
 
 export async function processVideo(fileName: string, saveFileName: string) {

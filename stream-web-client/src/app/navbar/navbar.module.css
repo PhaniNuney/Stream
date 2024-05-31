@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  background-color: #fff;
+  color: black;
+}
+
+.navbar h1 {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.button {
+  background-color: #83bffe;
+  color: #000; /* changed to a darker color */
+  border: none; /* added border color */
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #007bff;
+  color: #fff; /* changed to white for better contrast */
+}
+
+.buttonUpload {
+  background-color: #70b881;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttonUpload:hover {
+  background-color: #218838;
+}
