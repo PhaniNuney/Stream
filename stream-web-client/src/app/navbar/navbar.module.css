@@ -25,16 +25,3 @@
   background-color: #007bff;
   color: #fff; /* changed to white for better contrast */
 }
-
-.buttonUpload {
-  background-color: #70b881;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.buttonUpload:hover {
-  background-color: #218838;
-}

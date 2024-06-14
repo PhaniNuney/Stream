@@ -4,12 +4,14 @@ import { User } from "firebase/auth";
 import styles from "./navbar.module.css";
 import { useState, useEffect } from "react";
 import { onAuthChange, signInWithGoogle, signout } from "../firebase/firebase";
+import Upload from "./upload";
 
 export default function Navbar() {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthChange((user: User | null) => {
+      console.log("Auth changed:", user); // Debug line
       setUser(user);
     });
 
@@ -21,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <h1>Stream</h1>
-      {user && <button className={styles.buttonUpload}>Upload</button>}
+      {user && <Upload />}
       {user ? (
         <button className={styles.button} onClick={signout}>
           Sign Out
