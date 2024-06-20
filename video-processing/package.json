@@ -14,6 +14,7 @@
     "@google-cloud/storage": "^7.10.2",
     "express": "^4.19.2",
     "ffmpeg": "^0.0.4",
+    "firebase-admin": "^12.1.1",
     "fluent-ffmpeg": "^2.1.2"
   },
   "devDependencies": {

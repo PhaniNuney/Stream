@@ -9,6 +9,17 @@ admin.initializeApp();
 const firestore = admin.firestore();
 const storage = new Storage();
 
+const videoCollectionId = "videos";
+
+export interface Video {
+  id?: string;
+  uid?: string;
+  filename?: string;
+  status?: "processing" | "processed";
+  title?: string;
+  description?: string;
+}
+
 const rawBucket = "raw-video-stream";
 
 export const createUser = functions.auth.user().onCreate(async (user) => {
@@ -49,4 +60,9 @@ export const UploadURL = onCall({maxInstances: 1}, async (request) => {
   });
 
   return {url, fileName};
+});
+
+export const getVideos = onCall({maxInstances: 1}, async () => {
+  const snapshot = firestore.collection(videoCollectionId).limit(10).get();
+  return (await snapshot).docs.map((doc) => doc.data());
 });
