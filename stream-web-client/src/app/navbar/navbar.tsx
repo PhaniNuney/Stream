@@ -5,6 +5,7 @@ import styles from "./navbar.module.css";
 import { useState, useEffect } from "react";
 import { onAuthChange, signInWithGoogle, signout } from "../firebase/firebase";
 import Upload from "./upload";
+import Link from "next/link";
 
 export default function Navbar() {
   const [user, setUser] = useState<User | null>(null);
@@ -22,7 +23,11 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <h1>Stream</h1>
+      <Link href="/" legacyBehavior>
+        <a className={styles.stream}>
+          <h1>Stream</h1>
+        </a>
+      </Link>
       {user && <Upload />}
       {user ? (
         <button className={styles.button} onClick={signout}>

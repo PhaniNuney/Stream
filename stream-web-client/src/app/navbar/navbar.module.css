@@ -25,3 +25,8 @@
   background-color: #007bff;
   color: #fff; /* changed to white for better contrast */
 }
+
+.stream {
+  text-decoration: none;
+  color: black;
+}
